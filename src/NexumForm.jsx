@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const CONFIG = {
   brandName: "Nexum Pharma",
   badgeText: "Prix de l'Innovation 2026",
-  contactEmail: "pierre@nexum-pharma.fr",
+  contactEmail: "pierre@nexum-technologies.fr",
 };
 
 const C = {
