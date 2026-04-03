@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   const BASE_URL = `https://${COMPANY_DOMAIN}.pipedrive.com/api/v1`;
 
   try {
-    const { civility, name, pharmacy, email, phone, address, siren, source } = req.body;
+    const { civility, name, pharmacy, email, phone, address, siren } = req.body;
 
     if (!name || !pharmacy || !email) {
       return res.status(400).json({ error: "Champs obligatoires manquants" });
@@ -41,9 +41,8 @@ export default async function handler(req, res) {
     if (!orgData.success) throw new Error(`Org error: ${JSON.stringify(orgData)}`);
     const orgId = orgData.data.id;
 
-    const civilityPrefix = civility === "madame" ? "Mme" : "M.";
     const personBody = {
-      name: `${civilityPrefix} ${name}`,
+      name: name,
       email: [{ value: email, primary: true, label: "work" }],
       phone: [{ value: phone, primary: true, label: "work" }],
       org_id: orgId,
@@ -63,7 +62,6 @@ export default async function handler(req, res) {
       title: `Livraison - ${pharmacy}`,
       person_id: personId,
       org_id: orgId,
-      "3b3316675da629b525e8d5817fbddddb0e89be1c": civility === "madame" ? "Madame" : "Monsieur",
       pipeline_id: PIPELINE_ID,
       stage_id: STAGE_ID,
       visible_to: 3,
