@@ -196,7 +196,7 @@ export default function NexumForm() {
         <div style={{ width: "80px", height: "80px", borderRadius: "50%", background: C.gradient, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem", boxShadow: `0 8px 30px ${C.glowStrong}` }}>
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" style={{ strokeDasharray: 50, animation: "checkDraw 0.6s ease 0.3s forwards" }} /></svg>
         </div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "#0f172a", marginBottom: "0.75rem" }}>C'est tout bon, {getCivilityPrefix()} {getFirstName()} !</h1>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", color: "#0f172a", marginBottom: "0.75rem" }}>C'est tout bon, {getFirstName()} !</h1>
         <p style={{ fontSize: "1.1rem", color: "#475569", lineHeight: 1.6, marginBottom: "0.5rem" }}>Votre contrat arrive dans votre boîte mail dans quelques minutes.</p>
         <p style={{ fontSize: "0.95rem", color: "#94a3b8", lineHeight: 1.6 }}><strong style={{ color: C.primary }}>{data.pharmacy}</strong> sera bientôt visible sur Uber Eats.<br />Bienvenue parmi les 400+ pharmacies Nexum Pharma 🎉</p>
         <div style={{ marginTop: "2rem", padding: "1rem 1.5rem", backgroundColor: "white", borderRadius: "12px", border: "1px solid #e0f2fe", display: "inline-block", boxShadow: `0 2px 8px ${C.glow}` }}>
