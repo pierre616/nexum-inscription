@@ -47,6 +47,7 @@ export default async function handler(req, res) {
       email: [{ value: email, primary: true, label: "work" }],
       phone: [{ value: phone, primary: true, label: "work" }],
       org_id: orgId,
+      "3b3316675da629b525e8d5817fbddddb0e89be1c": civility === "madame" ? "Madame" : "Monsieur",
     };
 
     const personRes = await fetch(`${BASE_URL}/persons?api_token=${API_KEY}`, {
@@ -62,6 +63,7 @@ export default async function handler(req, res) {
       title: `Livraison - ${pharmacy}`,
       person_id: personId,
       org_id: orgId,
+      "3b3316675da629b525e8d5817fbddddb0e89be1c": civility === "madame" ? "Madame" : "Monsieur",
       pipeline_id: PIPELINE_ID,
       stage_id: STAGE_ID,
       visible_to: 3,
